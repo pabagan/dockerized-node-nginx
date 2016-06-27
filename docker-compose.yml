@@ -1,0 +1,18 @@
+version: '2'
+services:
+  #db:
+  #  image: postgres
+  web:
+    build: .
+    container_name: node-nginx
+    volumes:
+      - ./apps:/usr/share/nginx/html
+    #command: source hello.js
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "8000:8000"
+      - "443:443"
+      - "9000:9000"
+      - "35729:35729"
+    tty: true
